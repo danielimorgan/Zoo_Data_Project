@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+    <script>
+        $(document).ready(function() {
+            $('#animalForm').submit(function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Serialize the form data
+                var formData = $(this).serialize();
+                console.log('formData::>',formData)
+
+                // Send AJAX request
+                $.ajax({
+                    type: 'POST',
+                    url: '/submit',
+                    data: formData,
+                    success: function(response) {
+                        // Handle success response
+                        console.log(response);
+                        //$("#result").html(response)
+                        alert("Most probably This is a "+response)
+
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error
+                        console.error(xhr.responseText);
+                        alert(error);
+                        // You can display an error message here
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="result"> </div>
+    <form id="animalForm" action="/submit" method="post">
+        <label for="animal_name">Animal Name:</label>
+        <input type="text" id="animal_name" name="animal_name"><br><br>
+
+        <label for="hair">Does it have hair :</label>
+        <input type="checkbox" id="hair" name="hair" value="1"><br><br>
+
+        <label for="feathers">Does it have feathers:</label>
+        <input type="checkbox" id="feathers" name="feathers" value="1"><br><br>
+
+        <label for="eggs">Does it lay eggs:</label>
+        <input type="checkbox" id="eggs" name="eggs" value="1"><br><br>
+
+        <label for="milk">Does it produce milk:</label>
+        <input type="checkbox" id="milk" name="milk" value="1"><br><br>
+
+        <label for="airborne">Is it airborne:</label>
+        <input type="checkbox" id="airborne" name="airborne" value="1"><br><br>
+
+        <label for="aquatic">Is it aquatic:</label>
+        <input type="checkbox" id="aquatic" name="aquatic" value="1"><br><br>
+
+        <label for="predator">Is it a predator:</label>
+        <input type="checkbox" id="predator" name="predator" value="1"><br><br>
+
+        <label for="toothed">Is it a Toothed:</label>
+        <input type="checkbox" id="toothed" name="toothed" value="1"><br><br>
+
+        <label for="backbone">Does it have a Backbone:</label>
+        <input type="checkbox" id="backbone" name="backbone" value="1"><br><br>
+
+        <label for="air_breather"> Is it an Air Breather:</label>
+        <input type="checkbox" id="air_breather" name="air_breather" value="1"><br><br>
+
+        <label for="water_breather">Is it a Water Breather:</label>
+        <input type="checkbox" id="water_breather" name="water_breather" value="1"><br><br>
+
+        <label for="venomous">Is it Venomous:</label>
+        <input type="checkbox" id="venomous" name="venomous" value="1"><br><br>
+
+        <label for="fins">Does it have Fins:</label>
+        <input type="checkbox" id="fins" name="fins" value="1"><br><br>
+
+        <label for="tail">Does it have a Tail:</label>
+        <input type="checkbox" id="tail" name="tail" value="1"><br><br>
+       
+        <label for="legs">How many legs does it have:</label>
+        <input type="text" id="legs" name="legs" value="0"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
