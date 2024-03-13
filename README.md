@@ -74,10 +74,10 @@ The deployment of these models marks a significant step towards [state the impac
 ## Contributing
 
 ### Team Members
-- **Michael Moore**: [Role or Contribution]
-- **Lara Berry**: [Role or Contribution]
-- **Anthony Hembree**: [Role or Contribution]
-- **Daniel Morgan**: [Role or Contribution]
+- **Michael Moore** 
+- **Lara Berry** 
+- **Anthony Hembree**
+- **Daniel Morgan** 
 
 ### External Contributions
 We welcome contributions from the community. If you would like to contribute, please follow these steps:
