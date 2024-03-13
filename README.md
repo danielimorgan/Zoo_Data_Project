@@ -95,7 +95,7 @@ In this project, our exploration was centered around the utilization of machine 
 
 The Flask app provided an interactive platform where users could engage with the models in real-time. By inputting their data, users could receive instant predictions and analyses. This interactive model deployment enabled us to identify significant patterns and insights, which are instrumental for advancing the field of data science and enhancing industry-specific strategies.
 
-## Referances
+## References
 
 - **Pandas**: Documentation
 - **Python**: Documentation
